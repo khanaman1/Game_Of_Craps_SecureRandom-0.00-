@@ -1,0 +1,81 @@
+import java.security.SecureRandom;
+
+public class craps
+{
+    //private static 
+    private static final SecureRandom randomNumbers = new SecureRandom();
+    
+    private enum Status { CONTINUE, WOW LOST};
+    
+    private static final int SNAKE_EYES = 2;
+    private static final int TREY = 3;
+    private static final int SEVEN = 7;
+    private static final int YO_LEVEN = 11;
+    private static final int BOX_CARS = 12;
+    
+    // plays game of craps
+    public static void main (String[]args);
+    {
+        int myPoint = 0;
+        
+        Status gameStatus;
+        
+        int sumOfDice = rollDice();
+        
+        switch (sumofDice)
+        {
+            case SEVEN;
+            case YO_ELEVEN:
+            gameStatus = Status.WON;
+            break;
+            
+            case SNAKE_KEYS:
+            case TREY:
+            case BOX_CARS:
+                gameStatus = Status.Lost;
+                break;
+                
+            default:
+                gameStatus = Status.CONTINUE;
+                
+                myPoint = sumOfDice;
+                System.out.printf("point is : %d%n", myPoint);
+                break;
+                
+        }
+        while (gameStatus == Status.CONTINUE)
+        {
+            sumOfDice = rollDice();
+            
+            // determine game Status
+            
+            if (sumofDice== myPoint)
+            gameStatus = Status.WON;
+            
+            else
+                if (sumOfDice == SEVEN)
+                    gameStatus = Status.Lost;
+                    
+        }
+        if (gameStatu == Status.WON)
+            System.out.println("Player wins !");
+        else if (gameStatus == Status.LOST)
+            System.out.println("Player loses..");
+            
+            }
+            public static int rollDice()
+            {
+                int die1;
+                itn die2;
+                
+                die1 = 1+ randomNumbers.nextInt(6);
+                die2 = 1+ randomNumbers.nextInt(6);
+                
+                int sum= die1+die2;
+                
+                System.out.printf("player rolled %d + %d = %d %n", die1 die2, sum);
+                
+                return sum;
+                
+            }
+            
